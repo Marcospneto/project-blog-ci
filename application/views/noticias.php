@@ -6,7 +6,7 @@
 			foreach ($noticias as $linha){
 		?>
 		<li>
-			<img width="60px" height="50px" class="caixa" src="<?php echo base_url('uploads/'.$linha->imagem)?>">
+			<img width="70px" height="80px" class="caixa" src="<?php echo base_url('uploads/'.$linha->imagem)?>">
 			<h4 style="color: honeydew"><?php echo to_html($linha->titulo);?></h4>
 			<p style="color: honeydew"><?php echo resumo_post($linha->conteudo);?>...
 			<a href=" <?php echo base_url('post/'.$linha->id);?>">Leia mais &raquo;</a> </p>

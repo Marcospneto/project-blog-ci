@@ -7,8 +7,8 @@
 		</div>
 			<div class="col-md-5" style="text-align: justify;">
             <div>
-                <h4> <b> Produto </b> </h4>
-                <img width="170px;" height="170px;" src="<?php echo base_url('uploads/'.$not_imagem);?>" alt="<?php echo $not_titulo;?>">
+
+                <img width="380px;" height="500px;" src="<?php echo base_url('uploads/'.$not_imagem);?>" alt="<?php echo $not_titulo;?>">
                 <div style="width:70%;">
                     <ul>
                         <li> Publicada em: </li>
