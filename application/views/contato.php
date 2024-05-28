@@ -56,8 +56,7 @@
             &emsp; 2.Lorem ipsum dolor sit amet.<br><br>
             Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </div>
-        <?php $this->load->view('noticias'); ?>
-    </div>
+	</div>
 
 <?php $this->load->view('footer'); ?>
 

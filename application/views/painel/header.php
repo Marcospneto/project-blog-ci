@@ -38,7 +38,7 @@
 		</button>
 	</div>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: #004f4f" >
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: #004f4f">
 		<ul class="nav navbar-nav navbar-left">
 			<a class="navbar-brand" href="<?php echo base_url('pagina');?>">
 				<?php

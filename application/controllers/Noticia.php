@@ -17,8 +17,7 @@ class Noticia extends CI_Controller
 		redirect('noticia/listar', 'refresh');
 	}
 
-	public function listar()
-	{
+	public function listar(){
 		/*Verifica se está logado*/
 		verifica_login();
 		//Carrega a view

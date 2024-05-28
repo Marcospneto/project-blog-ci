@@ -59,7 +59,6 @@
                 </div>
             </div>
         </div>
-        <?php $this->load->view('noticias'); ?>
-    </div>
+	</div>
 
 <?php $this->load->view('footer'); ?>

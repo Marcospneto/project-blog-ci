@@ -1,25 +1,33 @@
 <?php $this->load->view('header'); ?>
+<h1><strong>Notícias</strong></h1>
+	<div class="container">
+		<?php if ($noticias = $this->noticia->getNoticia()) {
+			foreach ($noticias as $linha){ ?>
+				<div class="card" style="background-image: url('<?php echo base_url('uploads/' . $linha->imagem); ?>'); background-size: cover; background-repeat: no-repeat; background-position: center">
+					<div class="content">
+						<p><?php echo resumo_post($linha->conteudo)?>.</p>
+						<a href="<?php echo base_url('post/' .$linha->id);?>">Mais Informações</a>
+					</div>
+				</div>
+			<?php
+			}
+
+			}else {
+				echo '<p>Nenhuma noticia encontrada</p>';
+			 }
+			 ?>
 
 
-<div>
-
-</div>
 
 
 
-
-
-        <div class="EmpresaTrabalho col-md-8">
-            <div class="Nome"> <h4> <h1>Destaque</h1> <br> </h4> </div>
-            <img width="600px" height="300px" src="<?php echo base_url('application/assets/Imgs/cliente.jpg')?>">
-            <article style="text-align: justify;">
-                <p>Ao contrário do que se acredita, Lorem Ipsum não é simplesmente um texto randômico. 
-                Com mais de 2000 anos, suas raízes podem ser encontradas em uma obra de literatura latina
-                clássica datada de 45 AC.</p>
-            </article>
-			<a href="<?php echo base_url('cliente');?>" class="btn btn-info" style="margin-top: 1%;">Ver outros trabalhos&raquo;</a>
-        </div>
-    </div>
-
+<script>
+	VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 25,
+		speed: 400,
+		glare: true,
+		"max-glare":1,
+	});
+</script>
 
 <?php $this->load->view('footer'); ?>
