@@ -1,5 +1,5 @@
 <?php $this->load->view('header'); ?>
-<h1><strong>Notícias</strong></h1>
+<h1><strong>Notícias do momento</strong></h1>
 <div class="container">
 	<?php if ($noticias = $this->noticia->getNoticia()) : ?>
 		<?php foreach ($noticias as $linha) : ?>
