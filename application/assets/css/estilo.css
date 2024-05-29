@@ -36,5 +36,12 @@ img.caixa{
 
 }
 
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px; /* Ajuste a largura conforme necessário */
+
+}
 
 
