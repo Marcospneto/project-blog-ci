@@ -32,10 +32,10 @@
 										foreach ($noticias as $linha){
 									?>
 									<tr>
-										<td><?php echo $linha->titulo;?></td>
+										<td class="truncate"><?= $linha->titulo;?></td>
 										<td class="text-center"><?php echo anchor('noticia/editar/' . $linha->id, 'Editar');?>
-											| <?php echo anchor('noticia/excluir/' . $linha->id, 'Excluir');?>
-											| <?php echo anchor('post/'.$linha->id,'Ver', array('target' => '_blank'));?></td>
+											| <?= anchor('noticia/excluir/' . $linha->id, 'Excluir');?>
+											| <?= anchor('post/'.$linha->id,'Ver', array('target' => '_blank'));?></td>
 									</tr>
 
 										<?php
@@ -69,11 +69,12 @@
 
 								<div class="form-group">
 									<label for="exampleFormControlFile1">Escolher Arquivo</label>
+									<h6> <strong>Escolha uma imagem com dimensão 290x300</strong></h6>
 									<input type="file" class="form-control-file" name="imagem" id="exampleFormControlFile1" placeholder="Imagem da notícia">
 								</div>
 								<div class="container-login100-form-btn">
-									<?php
-									echo form_submit('enviar', 'Salvar notícia', array('class' => 'btn btn-primary', 'id' => 'btn-show-sweetalert'));
+									<?=
+										form_submit('enviar', 'Salvar notícia', array('class' => 'btn btn-primary', 'id' => 'btn-show-sweetalert'));
 									?>
 								</div>
 							</form>

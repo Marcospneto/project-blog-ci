@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Noticia extends CI_Controller
 {
@@ -13,11 +13,13 @@ class Noticia extends CI_Controller
 		$this->load->model('Noticia_model', 'noticia');
 	}
 
-	public function index(){
+	public function index()
+	{
 		redirect('noticia/listar', 'refresh');
 	}
 
-	public function listar(){
+	public function listar()
+	{
 		/*Verifica se está logado*/
 		verifica_login();
 		//Carrega a view
@@ -30,7 +32,8 @@ class Noticia extends CI_Controller
 
 	}
 
-	public function cadastrar(){
+	public function cadastrar()
+	{
 
 		/*Verifica se está logado*/
 		verifica_login();
@@ -92,7 +95,8 @@ class Noticia extends CI_Controller
 
 	}
 
-	public function excluir(){
+	public function excluir()
+	{
 		// Verifica se está logado
 		verifica_login();
 
@@ -114,18 +118,21 @@ class Noticia extends CI_Controller
 
 
 	//Obtém o ID da URI e valida
-	private function getIdFromUri(){
+	private function getIdFromUri()
+	{
 		return (int)$this->uri->segment(3) > 0 ? (int)$this->uri->segment(3) : null;
 	}
 
 	//Redireciona com uma mensagem
-	private function redirectWithMessage($message, $redirectUrl){
+	private function redirectWithMessage($message, $redirectUrl)
+	{
 		set_msg("<p>$message</p>");
 		redirect($redirectUrl, 'refresh');
 	}
 
 	//Carrega a view com os dados da notícia
-	private function loadViewWithNoticiaExcluir($noticia){
+	private function loadViewWithNoticiaExcluir($noticia)
+	{
 		$dados = array(
 			'titulo' => 'JVM - Exclusão de Notícias',
 			'h2' => 'Exclusão de Notícias',
@@ -135,7 +142,8 @@ class Noticia extends CI_Controller
 		$this->load->view('painel/noticia', $dados);
 	}
 
-	private function loadViewWithNoticiaEditar($noticia){
+	private function loadViewWithNoticiaEditar($noticia)
+	{
 		$dados = array(
 			'titulo' => 'JVM - Exclusão de Notícias',
 			'h2' => 'Exclusão de Notícias',
@@ -146,7 +154,8 @@ class Noticia extends CI_Controller
 	}
 
 
-	public function excluirAction(){
+	public function excluirAction()
+	{
 		// Verifica se está logado
 		verifica_login();
 
@@ -154,10 +163,10 @@ class Noticia extends CI_Controller
 		$id = (int)$this->uri->segment(3);
 		$response = array('status' => 'error', 'message' => 'Erro ao excluir a notícia');
 		if ($id > 0) {
-				$noticia = $this->noticia->getSingle($id);
-				if($noticia) {
-					$imagem = 'uploads/' . $noticia->imagem;
-				}
+			$noticia = $this->noticia->getSingle($id);
+			if ($noticia) {
+				$imagem = 'uploads/' . $noticia->imagem;
+			}
 
 			// Tenta excluir a notícia
 			if ($this->noticia->excluir($id)) {
@@ -173,7 +182,8 @@ class Noticia extends CI_Controller
 	}
 
 
-	public function editar(){
+	public function editar()
+	{
 		// Verifica se está logado
 		verifica_login();
 
@@ -193,7 +203,8 @@ class Noticia extends CI_Controller
 		$this->loadViewWithNoticiaEditar($noticia);
 	}
 
-	public function editarAction(){
+	public function editarAction()
+	{
 		// Verifica se está logado
 		verifica_login();
 
@@ -234,7 +245,7 @@ class Noticia extends CI_Controller
 					echo json_encode(array('status' => 'error', 'message' => $msg));
 					return;
 				}
-			}else{
+			} else {
 				$dados_update['imagem'] = $imagem_antiga;
 			}
 
